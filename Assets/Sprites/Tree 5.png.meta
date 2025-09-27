@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 32629f75aa4cf19439786ffb4194fd48
+guid: 4df487a48961f3346bcaadd1b30157cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3809319501612307451
-    second: Snowboarding Dino_0
+      213: 4296731722166109183
+    second: Tree 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Snowboarding Dino_0
+      name: Tree 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 497
-        height: 331
+        width: 613
+        height: 1304
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf3d19177eb6dd430800000000000000
-      internalID: 3809319501612307451
+      spriteID: ff30dda7cbe01ab30800000000000000
+      internalID: 4296731722166109183
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Snowboarding Dino_0: 3809319501612307451
+      Tree 2_0: 4296731722166109183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
