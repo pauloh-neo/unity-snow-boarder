@@ -8,16 +8,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool canControlPlayer = true;
     float previousRotation;
     float totalRotation;
-    int flipCount;
+    //int flipCount;
     Vector2 moveVector;
     InputAction moveAction;
     Rigidbody2D myRigidBody2D;
     SurfaceEffector2D surfaceEffector2D;
+    ScoreManager scoreManager;
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
         myRigidBody2D = GetComponent<Rigidbody2D>();
         surfaceEffector2D = FindFirstObjectByType<SurfaceEffector2D>();
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
 
@@ -70,9 +72,10 @@ public class PlayerController : MonoBehaviour
 
         if (totalRotation > 340 || totalRotation < -340)
         {
-            flipCount += 1;
+            //flipCount += 1;
+            scoreManager.AddScore(100);
             totalRotation = 0;
-            print(flipCount);
+            
         }
 
         previousRotation = currentRotation;
