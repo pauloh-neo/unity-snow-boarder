@@ -3,11 +3,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float torqueAmount = 1f;
+    [SerializeField] float baseSpeed = 15f;
+    [SerializeField] float boostSpeed = 20f;
+    [SerializeField] bool canControlPlayer = true;
     Vector2 moveVector;
     InputAction moveAction;
     Rigidbody2D myRigidBody2D;
-    [SerializeField] float baseSpeed = 15f;
-    [SerializeField] float boostSpeed = 20f;
     SurfaceEffector2D surfaceEffector2D;
     void Start()
     {
@@ -19,12 +20,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        RotatePlayer();
-        BoostSpeed();
+        if (canControlPlayer)
+        {
+            RotatePlayer();
+            BoostSpeed();
+        }
     }
 
     void RotatePlayer()
-    { 
+    {
         moveVector = moveAction.ReadValue<Vector2>();
 
         if (moveVector.x < 0)
@@ -47,5 +51,10 @@ public class PlayerController : MonoBehaviour
         {
             surfaceEffector2D.speed = baseSpeed;
         }
+    }
+
+    public void DisableControls()
+    {
+        canControlPlayer = false;
     }
 }
