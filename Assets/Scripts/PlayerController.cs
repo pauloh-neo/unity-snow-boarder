@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     void CalculateFlips()
     {
-         float currentRotation = transform.rotation.eulerAngles.z;
+        float currentRotation = transform.rotation.eulerAngles.z;
 
         totalRotation += Mathf.DeltaAngle(previousRotation, currentRotation);
 
@@ -75,10 +75,24 @@ public class PlayerController : MonoBehaviour
             //flipCount += 1;
             scoreManager.AddScore(100);
             totalRotation = 0;
-            
+
         }
 
         previousRotation = currentRotation;
 
+    }
+
+    public void ActivatePowerUp(PowerUpSO powerUp)
+    {
+        if (powerUp.GetPowerUpType() == "speed")
+        {
+            baseSpeed += powerUp.GetValueChange();
+            boostSpeed += powerUp.GetValueChange();
+        }
+
+        else if (powerUp.GetPowerUpType() == "torque")
+        {
+            torqueAmount += powerUp.GetValueChange();
+        }
     }
 }
