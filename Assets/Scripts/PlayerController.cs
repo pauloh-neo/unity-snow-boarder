@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     Rigidbody2D myRigidBody2D;
     SurfaceEffector2D surfaceEffector2D;
-    ScoreManager scoreManager;
+    [SerializeField] ScoreManager scoreManager;
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
         myRigidBody2D = GetComponent<Rigidbody2D>();
         surfaceEffector2D = FindFirstObjectByType<SurfaceEffector2D>();
-        scoreManager = FindFirstObjectByType<ScoreManager>();
+        
     }
 
 

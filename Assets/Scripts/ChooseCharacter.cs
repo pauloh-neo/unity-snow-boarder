@@ -4,30 +4,33 @@ public class ChooseCharacter : MonoBehaviour
 {
     [SerializeField] SpriteRenderer rex;
     [SerializeField] SpriteRenderer frog;
-    [SerializeField] Canvas scoreCanvas;
-    [SerializeField] Canvas chooseCharCanvas;
+    [SerializeField] GameObject scoreCanvas;
     void Start()
     {
-        Time.timeScale = 0;
-        chooseCharCanvas.enabled = true;
-        scoreCanvas.enabled = false;
+        BeginGame();
     }
 
+    void BeginGame()
+    {
+        Time.timeScale = 0;
+        scoreCanvas.SetActive(false);
+        gameObject.SetActive(true);
+    }
 
     public void ChooseRex()
     {
         rex.enabled = true;
         Time.timeScale = 1;
-        chooseCharCanvas.enabled = false;
-        scoreCanvas.enabled = true;
+        scoreCanvas.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void ChooseFrog()
     {
         frog.enabled = true;
         Time.timeScale = 1;
-        chooseCharCanvas.enabled = false;
-        scoreCanvas.enabled = true;
+        scoreCanvas.SetActive(true);
+        gameObject.SetActive(false);
     }
     
 }
