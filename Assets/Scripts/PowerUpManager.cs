@@ -3,7 +3,7 @@ using UnityEngine;
 public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] PowerUpSO powerUpSO;
-    [SerializeField] bool isPowerUpActive = false;
+    // [SerializeField] bool isPowerUpActive = false;
     PlayerController playerController;
     SpriteRenderer spriteRenderer;
     float timeLeft = 0;
@@ -27,7 +27,9 @@ public class PowerUpManager : MonoBehaviour
         if (collision.gameObject.layer == layerIndex)
         {
             spriteRenderer.enabled = false;
+            GetComponent<Collider2D>().enabled = false;
             playerController.ActivatePowerUp(powerUpSO);
+            
             
         }
     }
@@ -37,12 +39,13 @@ public class PowerUpManager : MonoBehaviour
 
         if (timeLeft > 0 && !spriteRenderer.enabled)
         {
+            
             timeLeft -= Time.deltaTime;
 
             if (timeLeft <= 0)
             {
                 playerController.DeactivatePowerUp(powerUpSO);
-                print("Deactivated!");
+                
             }
         }
     }

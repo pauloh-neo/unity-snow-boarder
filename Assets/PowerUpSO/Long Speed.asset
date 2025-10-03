@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Long Speed
   m_EditorClassIdentifier: 
   powerUpType: speed
-  valueChange: 10
+  valueChange: 5
   time: 10

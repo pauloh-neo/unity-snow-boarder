@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c05bdefac79db74890e6e9266c55cd8, type: 3}
   m_Name: Short Speed
   m_EditorClassIdentifier: 
+  powerUpType: speed
+  valueChange: 5
+  time: 2

@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float baseSpeed = 15f;
     [SerializeField] float boostSpeed = 20f;
     [SerializeField] bool canControlPlayer = true;
+    [SerializeField] ParticleSystem powerUpEffect;
+
+    [SerializeField] int activePowerUpCount;
     float previousRotation;
     float totalRotation;
     //int flipCount;
@@ -84,6 +87,9 @@ public class PlayerController : MonoBehaviour
 
     public void ActivatePowerUp(PowerUpSO powerUp)
     {
+        powerUpEffect.Play();
+        activePowerUpCount += 1;
+
         if (powerUp.GetPowerUpType() == "speed")
         {
             baseSpeed += powerUp.GetValueChange();
@@ -98,6 +104,12 @@ public class PlayerController : MonoBehaviour
 
     public void DeactivatePowerUp(PowerUpSO powerUp)
     {
+        activePowerUpCount -= 1;
+
+        if (activePowerUpCount == 0)
+        {
+            powerUpEffect.Stop();
+        }
         if (powerUp.GetPowerUpType() == "speed")
         {
             baseSpeed -= powerUp.GetValueChange();
